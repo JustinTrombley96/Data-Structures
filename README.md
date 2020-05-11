@@ -1,5 +1,11 @@
 # Data Structures 
 
+Day 1: Implement Stacks and Queues
+Day 2: Implement a Doubly Linked List
+Day 3: Implement a Binary Search Tree
+Day 4: Implement additional traversal methods on the Binary Search Tree
+
+
 Topics:
  * Linked Lists
  * Queues
