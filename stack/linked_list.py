@@ -19,8 +19,17 @@ class LinkedList:
     def __init__(self):
         # first node in the list 
         self.head = None
+        self.tail = None
+    
+    def add_to_head(self, value):
+      new_node = Node(value)
+      if not self.head:
+        self.head = new_node
+      else:
+        new_node.set_next(self.head)
+        self.head = new_node
 
-    def add_to_end(self, value):
+    def add_to_tail(self, value):
         # regardless of if the list is empty or not, we need to wrap the value in a Node 
         new_node = Node(value)
         # what if the list is empty? 
