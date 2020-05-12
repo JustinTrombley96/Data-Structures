@@ -25,5 +25,8 @@ class Stack:
         return self.storage.add_to_head(value)
 
     def pop(self):
-        self.size -= 1
-        return self.storage.remove_from_head()
+        if self.size == 0:
+            return None
+        else:
+            self.size -= 1
+            return self.storage.remove_from_head()
