@@ -67,6 +67,17 @@ class BSTNode:
         # otherwise, keep going right
         return self.right.get_max()
 
+    def iterative_get_max(self):
+        current_max = self.value
+
+        current = self
+        # traverse our structure
+        while current is not None:
+            if current.value > current_max:
+                current_max = current.value
+            # update our current_max variable if we see a larger value
+            current = current.right
+        return current_max  
     # Call the function `fn` on the value of each node
     def for_each(self, fn):
         # call the fn on the value at this node
