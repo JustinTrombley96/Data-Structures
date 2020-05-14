@@ -11,6 +11,7 @@ This part of the project comprises two days:
 """
 
 from collections import deque
+from stack import Stack
 class BSTNode:
     def __init__(self, value):
         self.value = value
@@ -132,26 +133,55 @@ class BSTNode:
     # Print all the values in order from low to high
     # Hint:  Use a recursive, depth first traversal
     def in_order_print(self, node):
-        pass
+        if node:
+            self.in_order_print(node.left)
+            print(node.value)
+            self.in_order_print(node.right)
+
+        # node(self.value)
+        # print(node)
+        # if self.left:
+        #     self.left.in_order_print(node)
+        # if self.right and not self.left:
+        #     self.right.in_order_print(node)
 
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
     # breadth is going in tiers down the tree
     def bft_print(self, node):
-        pass
+        queue = deque()
+        queue.append(self)
+        while len(queue) > 0:
+            current = queue.popleft()
+            print(current)
+            if current.left:
+                queue.append(current.left)
+
+            if current.right:
+                queue.append(current.right)
+            
+            node(current.value)
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     # depth is working at the top of the tree and going left
     def dft_print(self, node):
-        pass
+        s = Stack()
+        s.push(node)
+        while len(s) > 0:
+            current = s.pop()
+            print(current.value)
+            if current.left:
+                s.push(current.left)
+            if current.right:
+                s.push(current.right)
 
     # Stretch Goals -------------------------
     # Note: Research may be required
 
     # Print Pre-order recursive DFT
     def pre_order_dft(self, node):
-        
+        pass
 
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
